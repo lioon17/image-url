@@ -224,10 +224,11 @@ function renderFilePreview() {
     formData.append('image', file.file)
 
     try {
-      const res = await fetch('http://localhost:3000/api/upload', {
+      const res = await fetch('/api/upload', {
         method: 'POST',
         body: formData
-      })
+        })
+
 
       const result = await res.json()
 

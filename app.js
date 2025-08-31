@@ -43,7 +43,7 @@ app.post('/api/upload', upload.single('image'), (req, res) => {
     return res.status(400).json({ success: false, message: 'No image uploaded' });
   }
 
-  const publicUrl = `http://localhost:${PORT}/images/${bucket}/${file.filename}`;
+  const publicUrl = `${req.protocol}://${req.get('host')}/images/${bucket}/${file.filename}`;
   res.json({ success: true, url: publicUrl });
 });
  
