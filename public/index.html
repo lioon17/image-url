@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Binary Core Systems - Image Upload</title>
+    <link rel="stylesheet" href="/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+</head>
+<body>
+      
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="logo-container">
+                        <i data-lucide="binary" class="logo-icon"></i>
+                        <div class="status-dot"></div>
+                    </div>
+                    <div class="logo-text">
+                        <h1>Binary Core Systems</h1>
+                        <p>Digital Asset Management</p>
+                    </div>
+                </div>
+                <div class="system-status">
+                    <div class="status-indicator">
+                        <div class="status-dot-small"></div>
+                        <span>System Online</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="content-wrapper">
+             Bucket Creation Section 
+            <div class="card">
+                <div class="card-content">
+                    <div class="section-header">
+                        <i data-lucide="folder" class="section-icon"></i>
+                        <h3>Create Storage Bucket</h3>
+                    </div>
+                    <div class="form-group">
+                        <label for="bucket-name">Bucket Name</label>
+                        <input 
+                            type="text" 
+                            id="bucket-name" 
+                            placeholder="Enter bucket name (e.g., project-images, user-uploads)"
+                            class="input-field"
+                        >
+                        <div class="error-message" id="bucket-error" style="display: none;">
+                            <i data-lucide="alert-circle" class="error-icon"></i>
+                            <span class="error-text"></span>
+                        </div>
+                        <p class="help-text">
+                            Bucket names must be at least 3 characters and contain only letters, numbers, hyphens, and underscores.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+             Upload Area 
+            <div class="card upload-card">
+                <div class="binary-background">
+                    <div class="gradient-overlay"></div>
+                    <div class="binary-text">
+                        01001001 01101101 01100001 01100111 01100101<br>
+                        01010101 01110000 01101100 01101111 01100001 01100100<br>
+                        01010011 01111001 01110011 01110100 01100101 01101101
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="upload-area" id="upload-area">
+                        <input type="file" id="file-input" multiple accept="image/*" class="file-input">
+                        
+                        <div class="upload-content">
+                            <div class="upload-icon-container" id="upload-icon-container">
+                                <i data-lucide="upload" class="upload-icon" id="upload-icon"></i>
+                            </div>
+                            
+                            <div class="upload-text" id="upload-text">
+                                <h3 id="upload-title">Create a bucket first</h3>
+                                <p id="upload-description">Enter a valid bucket name above to start uploading images</p>
+                                <p class="bucket-info" id="bucket-info" style="display: none;">
+                                    Images will be uploaded to: <span class="bucket-name" id="bucket-display"></span>
+                                </p>
+                                <p class="file-types">Supports: JPG, PNG, GIF, WebP (Max 10MB each)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+             File Preview Section 
+            <div id="file-preview-section" style="display: none;">
+                 Dynamic content will be inserted here 
+            </div>
+
+             Action Buttons 
+            <div class="action-buttons" id="action-buttons" style="display: none;">
+                <button class="btn btn-outline" id="clear-btn">Clear All</button>
+                <button class="btn btn-primary" id="upload-btn">
+                    <span class="btn-text">Upload Files</span>
+                    <div class="spinner" style="display: none;"></div>
+                </button>
+            </div>
+
+             Bucket Access Section 
+            <div id="bucket-access-section" style="display: none;">
+                <div class="section-header">
+                    <i data-lucide="folder" class="section-icon"></i>
+                    <h2>Bucket Access</h2>
+                </div>
+                <div id="completed-buckets">
+                     Dynamic content will be inserted here 
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
