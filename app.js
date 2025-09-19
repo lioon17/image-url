@@ -43,7 +43,8 @@ app.post('/api/upload', upload.single('image'), (req, res) => {
     return res.status(400).json({ success: false, message: 'No image uploaded' });
   }
 
-  const publicUrl = `${req.protocol}://${req.get('host')}/images/${bucket}/${file.filename}`;
+  const domain = process.env.DOMAIN || `${req.protocol}://${req.get('host')}`;
+const publicUrl = `${domain}/images/${bucket}/${file.filename}`;
   res.json({ success: true, url: publicUrl });
 });
  
@@ -54,5 +55,5 @@ app.use((req, res) => {
 
 // Start server
 app.listen(PORT, () => {
-  console.log(`🚀 Meena backend running at http://localhost:${PORT}`);
+  console.log(`🚀 Meena backend running at https://image-url.onrender.com:${PORT}`);
 });
